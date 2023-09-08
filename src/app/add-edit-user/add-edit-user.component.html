@@ -1,0 +1,110 @@
+<div style="display: flex; justify-content: space-between;">
+    <h2>{{ operation }} usuario</h2>
+    <button mat-button (click)="onNoClick()">
+        <strong>X</strong>
+    </button>
+</div>
+<hr>
+<div>
+    <form [formGroup]="form" (ngSubmit)="addUser()">
+
+        <div style="display: flex; justify-content: space-between;">
+
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Departamento:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <mat-label>Seleccione un Departamento</mat-label>
+                    <mat-select formControlName="departamento">
+                        <mat-option *ngFor="let depa of listDepas" [value]="depa.codigo">
+                            {{depa.nombre}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Cargo:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <mat-label>Seleccione un Cargo</mat-label>
+                    <mat-select formControlName="cargo">
+                        <mat-option *ngFor="let cargo of listCargos" [value]="cargo.codigo">
+                            {{cargo.nombre}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Usuario:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="usuario" matInput>
+                </mat-form-field>
+            </div>
+
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Email:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="email" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Primer Nombre:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="pnombre" matInput>
+                </mat-form-field>
+            </div>
+
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Segundo Nombre:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="snombre" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10%;">
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Primer Apellido:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="papellido" matInput>
+                </mat-form-field>
+            </div>
+
+            <div style="width: 50%;">
+                <h4>
+                    <strong>Segundo Apellido:</strong>
+                </h4>
+                <mat-form-field class="w-75">
+                    <input formControlName="sapellido" matInput>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <hr>
+        <div style="display: flex; justify-content: flex-end;">
+            <button type="submit" class="mx-2" mat-raised-button color="primary">Registrar</button>
+            <button class="mx-2" mat-raised-button (click)="onNoClick()">Cancelar</button>
+        </div>
+
+    </form>
+</div>

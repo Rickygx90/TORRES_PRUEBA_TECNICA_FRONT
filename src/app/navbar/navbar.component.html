@@ -1,0 +1,27 @@
+<div>
+  <h3>Modulo de Administracion</h3>
+  <h1>Administracion de usuarios</h1>
+  <div style="display: flex; justify-content: space-between;">
+    <div class="w-100">
+      <mat-form-field class="mx-2" style="width: 14%;">
+        <mat-label>Seleccione un Departamento</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let depa of listDepas" [value]="depa.codigo">
+            {{depa.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="mx-2" style="width: 14%;">
+        <mat-label>Seleccione un Cargo</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let cargo of listCargos" [value]="cargo.codigo">
+            {{cargo.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button style="width: 15%;" mat-raised-button (click)="openDialog()">Crear nuevo usuario</button>
+  </div>
+  <hr>
+</div>
